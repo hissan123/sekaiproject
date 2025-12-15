@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <link rel="icon" type="image/png" href="favicon.png">
+  <meta charset="UTF-8">
+  <title>Project SEKAI Fan Site</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- HERO -->
+  <header class="hero">
+    <!-- ЛОГО САЙТА -->
+    <img src="images/logo.webp" class="logo" alt="Project SEKAI Logo">
+
+    <h1>Project SEKAI</h1>
+    <p>Colorful Stage feat. Hatsune Miku</p>
+
+    <div class="hero-buttons">
+      <button id="showBtn">Подробнее</button>
+    </div>
+    <div class="player">
+  <button id="prevBtn">⏮</button>
+  <button id="musicBtn">▶</button>
+  <button id="nextBtn">⏭</button>
+  <span id="trackTitle"></span>
+</div>
+  </header>
+
+  <!-- ОСНОВНОЙ КОНТЕНТ -->
+  <main id="content" class="hidden">
+
+    <!-- ОПИСАНИЕ ИГРЫ -->
+    <section class="about">
+      <h2>О игре</h2>
+      <p>
+        Project SEKAI: Colorful Stage feat. Hatsune Miku — это ритм-игра,
+        разработанная SEGA и Colorful Palette, в которой игроки исполняют
+        музыкальные треки вместе с виртуальными певцами и оригинальными персонажами.
+      </p>
+      <p class="warning">
+        ⚠️ Данный сайт является фан-проектом и не связан с SEGA или Colorful Palette.
+      </p>
+    </section>
+
+    <!-- РАЗДЕЛЫ -->
+    <section class="sections">
+      <div class="section-card">
+        <h3>Миры SEKAI</h3>
+        <p>Информация о разных мирах и их концепции.</p>
+      </div>
+
+      <div class="section-card">
+        <h3>Персонажи</h3>
+        <p>Описание персонажей и их характеристик.</p>
+      </div>
+
+      <div class="section-card">
+        <h3>Музыкальные группы</h3>
+        <p>Leo/need, MORE MORE JUMP!, VBS и другие.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- МУЗЫКА -->
+  <audio id="bgMusic"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>

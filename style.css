@@ -1,0 +1,159 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+}
+
+/* ===== HERO ===== */
+.hero {
+  height: 100vh;
+  width: 100%;
+
+  background-image: url("images/bg.webp"); /* ФОН */
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  position: relative;
+  padding: 20px;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+}
+
+.hero * {
+  position: relative;
+  z-index: 1;
+}
+
+.logo {
+  width: 180px;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-size: 48px;
+}
+
+.hero p {
+  margin-top: 10px;
+  opacity: 0.9;
+}
+
+/* ===== BUTTONS ===== */
+.hero-buttons {
+  margin-top: 30px;
+  display: flex;
+  gap: 15px;
+}
+
+button {
+  padding: 12px 26px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+#showBtn {
+  background: #6c7cff;
+  color: #0f1220;
+}
+
+#musicBtn {
+  background: rgba(255,255,255,0.15);
+  color: white;
+}
+
+/* ===== MAIN ===== */
+.hidden {
+  display: none;
+}
+
+main {
+  background: #0f1220;
+  padding: 60px 20px;
+}
+
+/* ABOUT */
+.about {
+  max-width: 800px;
+  margin: 0 auto 60px;
+  text-align: center;
+}
+
+.about h2 {
+  margin-bottom: 20px;
+}
+
+.about p {
+  line-height: 1.6;
+  margin-top: 10px;
+}
+
+.warning {
+  margin-top: 20px;
+  opacity: 0.7;
+  font-size: 14px;
+}
+
+/* SECTIONS */
+.sections {
+  max-width: 1000px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.section-card {
+  background: #1a1f3c;
+  border-radius: 20px;
+  padding: 30px;
+  text-align: center;
+}
+
+.section-card h3 {
+  margin-bottom: 10px;
+}
+
+/* ADAPTIVE */
+@media (max-width: 900px) {
+  .sections {
+    grid-template-columns: 1fr;
+  }
+}
+
+.player {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.player button {
+  padding: 6px 14px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.2);
+  color: white;
+}
+
+#trackTitle {
+  font-size: 14px;
+  opacity: 0.8;
+}
