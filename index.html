@@ -20,11 +20,36 @@
     <div class="hero-buttons">
       <button id="showBtn">Подробнее</button>
     </div>
-    <div class="player">
-  <button id="prevBtn">⏮</button>
-  <button id="musicBtn">▶</button>
-  <button id="nextBtn">⏭</button>
-  <span id="trackTitle"></span>
+    <!-- PJSK MINI PLAYER -->
+<div class="pjsk-player">
+
+  <div class="track-title" id="trackTitle">BUG</div>
+
+  <!-- кнопки -->
+  <div class="controls">
+    <button id="prevBtn" class="icon-btn">
+      ⏮
+    </button>
+
+    <button id="playBtn" class="icon-btn main">
+      ▶
+    </button>
+
+    <button id="nextBtn" class="icon-btn">
+      ⏭
+    </button>
+  </div>
+
+  <!-- прогресс -->
+  <input type="range" id="progress" min="0" max="100" value="0">
+
+  <!-- громкость -->
+  <div class="volume">
+    🔊
+    <input type="range" id="volume" min="0" max="1" step="0.01" value="0.6">
+  </div>
+
+  <audio id="audio"></audio>
 </div>
   </header>
 
