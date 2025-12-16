@@ -16,8 +16,15 @@ showBtn.addEventListener("click", () => {
   }
 });
 
-/* ===== МУЗЫКАЛЬНЫЙ ПЛЕЕР ===== */
-const audio = document.getElementById("bgMusic");
+const audio = document.getElementById("audio");
+
+const playBtn = document.getElementById("playBtn");
+const prevBtn = document.getElementById("prevBtn");
+const nextBtn = document.getElementById("nextBtn");
+
+const progress = document.getElementById("progress");
+const volume = document.getElementById("volume");
+const title = document.getElementById("trackTitle");
 
 const tracks = [
   { title: "Aishite Aishite feat. Ado", file: "music/Aishite Aishite feat. Ado.mp3" },
@@ -66,16 +73,15 @@ const tracks = [
 let index = 0;
 let playing = false;
 
-audio.src = tracks[index].file;
-
-const playBtn = document.getElementById("musicBtn");
-const titleBox = document.getElementById("trackTitle");
-
-function updateTitle() {
-  titleBox.textContent = tracks[index].title;
+function loadTrack(i) {
+  audio.src = tracks[i].file;
+  title.textContent = tracks[i].title;
 }
 
-playBtn.addEventListener("click", () => {
+loadTrack(index);
+
+/* play / pause */
+playBtn.onclick = () => {
   if (!playing) {
     audio.play();
     playBtn.textContent = "⏸";
@@ -84,32 +90,42 @@ playBtn.addEventListener("click", () => {
     playBtn.textContent = "▶";
   }
   playing = !playing;
-});
+};
 
-document.getElementById("nextBtn").addEventListener("click", () => {
+/* next */
+nextBtn.onclick = () => {
   index = (index + 1) % tracks.length;
-  audio.src = tracks[index].file;
+  loadTrack(index);
   audio.play();
-  playing = true;
   playBtn.textContent = "⏸";
-  updateTitle();
-});
+  playing = true;
+};
 
-document.getElementById("prevBtn").addEventListener("click", () => {
+/* prev */
+prevBtn.onclick = () => {
   index = (index - 1 + tracks.length) % tracks.length;
-  audio.src = tracks[index].file;
+  loadTrack(index);
   audio.play();
-  playing = true;
   playBtn.textContent = "⏸";
-  updateTitle();
-});
+  playing = true;
+};
 
-audio.addEventListener("ended", () => {
-  index = (index + 1) % tracks.length;
-  audio.src = tracks[index].file;
-  audio.play();
-  updateTitle();
-});
+/* progress */
+audio.ontimeupdate = () => {
+  if (!audio.duration) return;
+  progress.value = (audio.currentTime / audio.duration) * 100;
+};
 
-updateTitle();
+progress.oninput = () => {
+  audio.currentTime =
+    (progress.value / 100) * audio.duration;
+};
+
+/* volume */
+audio.volume = volume.value;
+volume.oninput = () => {
+  audio.volume = volume.value;
+};
+
+
 
