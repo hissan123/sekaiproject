@@ -23,7 +23,6 @@ const tracks = [
   { title: "Aishite Aishite feat. Ado", file: "music/Aishite Aishite feat. Ado.mp3" },
   { title: "Bug", file: "music/Bug.mp3" },
   { title: "Tetoris", file: "music/Tetoris.mp3" },
-  { title: "_Be_The_Music_", file: "music/_Be_The_Music_.mp3" },
   { title: "♪ MarbleBlue", file: "music/♪ MarbleBlue.mp3" },
   { title: "Ado_-_Usseewa_", file: "music/Ado_-_Usseewa_.mp3" },
   { title: "Awake Now", file: "music/Awake Now.mp3" },
@@ -113,3 +112,4 @@ audio.addEventListener("ended", () => {
 });
 
 updateTitle();
+
