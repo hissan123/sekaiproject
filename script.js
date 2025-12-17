@@ -127,5 +127,9 @@ volume.oninput = () => {
   audio.volume = volume.value;
 };
 
+/* === AUTO NEXT TRACK === */
+audio.addEventListener("ended", () => {
+  nextBtn.click();
+});
 
 
